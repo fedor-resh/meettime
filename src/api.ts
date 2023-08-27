@@ -2,7 +2,10 @@ import axios from 'axios';
 import { MS_IN_DAY } from './consts';
 import { BackendInterval, Interval, Results, Event, User, Participant } from './types';
 import { capitalizeFirstLetter } from './utils';
-
+const axiosWithCookies = axios.create({
+  baseURL: 'https://meettimeflask.fedor-resh.repl.co',
+  withCredentials: true,
+})
 const API_PATH = 'https://meettimeflask.fedor-resh.repl.co';
 export function convertParticipants(
   participants: User[],
@@ -43,36 +46,36 @@ export function convertIntervalsToFrontend(intervals: BackendInterval[]): Interv
 }
 
 export async function postLogin(params: { name: string }) {
-  const { data } = await axios.post(`${API_PATH}/login`, {
+  const { data } = await axiosWithCookies.post(`${API_PATH}/login`, {
     name: params.name,
   });
   return data;
 }
 
 export async function getCurrentUser(): Promise<{ name: string; id: string }> {
-  const { data } = await axios.get(`${API_PATH}/currentUser`);
+  const { data } = await axiosWithCookies.get(`${API_PATH}/currentUser`);
   return data;
 }
 
 export async function logout(): Promise<void> {
-  const { data } = await axios.get(`${API_PATH}/logout`);
+  const { data } = await axiosWithCookies.get(`${API_PATH}/logout`);
   return data;
 }
 
 export async function postEvent(params: { title: string; description: string }): Promise<string> {
   console.log('postEvent', params);
-  const { headers } = await axios.post(`${API_PATH}/events`, params);
+  const { headers } = await axiosWithCookies.post(`${API_PATH}/events`, params);
 
   return headers.location;
 }
 
 export async function getEventById(id: string): Promise<Event> {
-  const { data } = await axios.get(`${API_PATH}/events/${id}`);
+  const { data } = await axiosWithCookies.get(`${API_PATH}/events/${id}`);
   return data;
 }
 
 export async function postIntervals(intervals: Interval[], eventId: string) {
-  const { data } = await axios.post(
+  const { data } = await axiosWithCookies.post(
     `${API_PATH}/events/${eventId}/intervals`,
     convertIntervalsToBackend(intervals),
   );
@@ -80,19 +83,19 @@ export async function postIntervals(intervals: Interval[], eventId: string) {
 }
 
 export async function getAllIntervals(id: string) {
-  const { data } = await axios.get(`${API_PATH}/events/${id}/intervals`);
+  const { data } = await axiosWithCookies.get(`${API_PATH}/events/${id}/intervals`);
   return data;
 }
 
 export async function getResult(id: string): Promise<Results> {
-  const { data } = await axios.get(`${API_PATH}/events/${id}/result`);
+  const { data } = await axiosWithCookies.get(`${API_PATH}/events/${id}/result`);
   return data;
 }
 
 export async function getParticipants(
   id: string,
 ): Promise<Pick<Participant, 'color' | 'id' | 'name'>[]> {
-  const { data } = await axios.get(`${API_PATH}/events/${id}/participants`);
+  const { data } = await axiosWithCookies.get(`${API_PATH}/events/${id}/participants`);
   console.log(data);
   return data;
 }

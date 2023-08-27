@@ -1,0 +1,105 @@
+.window {
+  width: calc(100% - 10px);
+  padding: 0 10px;
+  height: 99vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.header {
+  margin: 10px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: stretch;
+  width: 100%;
+  .daySlider {
+    order: 5;
+    margin-bottom: -10px;
+  }
+  > * {
+    margin: 10px 0 10px 0;
+  }
+  input,
+  h1 {
+    order: -1;
+    margin: 0;
+  }
+}
+.buttonsWrapper {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  @media (max-width: 700px) {
+    flex-wrap: wrap;
+  }
+}
+@media (min-width: 900px) {
+  .header {
+    margin: 20px 0;
+    height: 50px;
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    > * {
+      order: 0 !important;
+    }
+    > *:first-child {
+      margin-right: auto;
+    }
+    > *:nth-child(2) {
+      margin: 0 auto;
+    }
+    > *:last-child {
+      margin: 0 0 0 auto;
+    }
+  }
+}
+
+.eventNameInput {
+  border: 0;
+  outline: none;
+  font-size: 26px;
+  font-weight: 300;
+  text-align: center;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s;
+
+  &::placeholder {
+    color: #bdc3c7;
+  }
+
+  &:focus {
+    border-color: rgba(52, 152, 219, 0.6);
+  }
+}
+
+.headerControls {
+  display: flex;
+  > button {
+    margin-right: 10px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+.stretch {
+  width: 100%;
+}
+
+.participantsAmount {
+  display: flex;
+  margin-right: 20px;
+  margin-top: 5px;
+  p {
+    display: inline-block;
+    margin: 3px 5px 0 5px;
+    font-size: 18px;
+    font-weight: lighter;
+  }
+  svg {
+    width: 20px;
+  }
+}

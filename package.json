@@ -1,0 +1,99 @@
+{
+  "name": "react-app-for-what-time",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@babel/eslint-parser": "^7.18.2",
+    "@radix-ui/react-dialog": "^0.1.7",
+    "@radix-ui/react-popover": "^0.1.6",
+    "@reduxjs/toolkit": "^1.8.4",
+    "@storybook/preset-create-react-app": "^4.1.2",
+    "@testing-library/jest-dom": "^5.16.4",
+    "@testing-library/react": "^13.3.0",
+    "@testing-library/user-event": "^13.5.0",
+    "axios": "^0.27.2",
+    "babel-eslint": "^10.1.0",
+    "classnames": "^2.3.1",
+    "feather-icons-react": "^0.5.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-feather": "^2.0.10",
+    "react-redux": "^8.0.2",
+    "react-scripts": "5.0.1",
+    "web-vitals": "^2.1.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "storybook": "start-storybook -p 6006 -s ./public",
+    "build-storybook": "build-storybook",
+    "prepare": "husky install",
+    "pre-commit": "lint-staged",
+    "typecheck": "bash -c tsc --noEmit",
+    "lint:format": "eslint . --ext .tsx,.ts,.js,.jsx --fix",
+    "style": "prettier -w"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.18.2",
+    "@next/eslint-plugin-next": "^12.1.6",
+    "@storybook/addon-actions": "^6.5.8",
+    "@storybook/addon-essentials": "^6.5.8",
+    "@storybook/addon-interactions": "^6.5.8",
+    "@storybook/addon-links": "^6.5.8",
+    "@storybook/builder-webpack5": "^6.5.8",
+    "@storybook/manager-webpack5": "^6.5.8",
+    "@storybook/react": "^6.5.8",
+    "@storybook/testing-library": "^0.0.12",
+    "@types/node": "17.0.41",
+    "@types/react": "18.0.12",
+    "@types/react-dom": "18.0.5",
+    "@typescript-eslint/eslint-plugin": "^5.30.0",
+    "@typescript-eslint/parser": "^5.30.0",
+    "babel-loader": "^8.2.5",
+    "css-loader": "^6.7.1",
+    "eslint": "^8.0.1",
+    "eslint-config-next": "12.1.6",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-n": "^15.0.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-promise": "^6.0.0",
+    "eslint-plugin-react": "^7.30.1",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.2",
+    "postcss-scss": "^4.0.4",
+    "prettier": "^2.7.1",
+    "sass": "^1.52.2",
+    "sass-loader": "^13.0.0",
+    "storybook-addon-sass-postcss": "^0.1.3",
+    "style-loader": "^3.3.1",
+    "typescript": "4.7.3"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "eslintConfig": {
+    "extends": [
+      "plugin:prettier/recommended",
+      "prettier"
+    ],
+    "plugins": [
+      "prettier"
+    ]
+  },
+  "proxy": "https://meettimeflask.fedor-resh.repl.co"
+}

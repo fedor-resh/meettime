@@ -1,0 +1,91 @@
+.day-slider {
+  width: 100%;
+  font-weight: 500;
+  height: 2rem;
+  font-size: 0.875rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  box-sizing: border-box;
+  justify-content: center;
+  background-color: var(--gray-light);
+  border-top-left-radius: var(--radius);
+  border-top-right-radius: var(--radius);
+}
+
+.date-div {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0 0.25rem;
+  box-sizing: border-box;
+}
+
+.date-span {
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.slider {
+  height: 100%;
+  background: none;
+  padding: 0 0.25rem;
+  box-sizing: border-box;
+  box-shadow: none;
+  display: flex;
+  align-items: center;
+  &.--left {
+    border-radius: var(--radius) 0 0 0;
+    border: none;
+    cursor: pointer;
+  }
+
+  &.--right {
+    border-radius: 0 var(--radius) 0 0;
+    border: none;
+    cursor: pointer;
+  }
+  &.--highlight {
+    background-color: var(--primary);
+  }
+}
+
+.weekday,
+.number,
+.month {
+  margin: 0;
+}
+
+.month,
+.weekday {
+  font-size: 18px;
+  font-weight: 400;
+}
+.number {
+  font-size: 20px;
+  font-weight: 400;
+  margin-right: 7px;
+}
+
+.date-span,
+.weekday-span {
+  display: flex;
+  align-items: center;
+}
+
+.before {
+  color: var(--gray-dark);
+}
+.today {
+  position: relative;
+  color: var(--gray-light);
+  background-color: var(--primary);
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  line-height: 28px;
+  text-align: center;
+  margin-right: 2px;
+}

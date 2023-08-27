@@ -64,9 +64,8 @@ export async function logout(): Promise<void> {
 
 export async function postEvent(params: { title: string; description: string }): Promise<string> {
   console.log('postEvent', params);
-  const { headers } = await axiosWithCookies.post(`${API_PATH}/events`, params);
-
-  return headers.location;
+  const { data } = await axiosWithCookies.post(`${API_PATH}/events`, params);
+  return data;
 }
 
 export async function getEventById(id: string): Promise<Event> {

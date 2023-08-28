@@ -109,10 +109,11 @@ export const login = createAsyncThunk('login', async (name: string, { getState }
 });
 export const postEventThunk = createAsyncThunk(
   'eventId/postEventThunk',
-  async (params: any, { dispatch }) => {
+  async (params: any, { dispatch, getState }) => {
     dispatch(setState({ isLoading: true }));
     const eventUrl = await postEvent(params);
     await dispatch(saveEvent(eventUrl));
+    await postIntervals(getState().store.adminIntervals, getState().store.eventId);
     dispatch(setResultThunk());
     dispatch(setState({ isLoading: false }));
   },
@@ -229,7 +230,7 @@ export const storeSlice = createSlice({
       console.log(eventUrl);
       state.isLoginModalOpen = true;
       state.eventId = eventUrl!.split('/')[eventUrl!.split('/').length - 1];
-      postIntervals(state.adminIntervals, state.eventId);
+      // postIntervals(state.adminIntervals, state.eventId);
       state.isResults = true;
       window.history.pushState('data', 'Time manager', '/' + state.eventId);
     },

@@ -113,7 +113,8 @@ export const postEventThunk = createAsyncThunk(
     dispatch(setState({ isLoading: true }));
     const eventUrl = await postEvent(params);
     await dispatch(saveEvent(eventUrl));
-    await postIntervals(getState().store.adminIntervals, getState().store.eventId);
+    const {adminIntervals, eventId} = getState().store
+    await postIntervals(adminIntervals, eventId);
     dispatch(setResultThunk());
     dispatch(setState({ isLoading: false }));
   },

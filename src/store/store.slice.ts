@@ -113,9 +113,12 @@ export const postEventThunk = createAsyncThunk(
     dispatch(setState({ isLoading: true }));
     const eventUrl = await postEvent(params);
     await dispatch(saveEvent(eventUrl));
-    
-    dispatch(setResultThunk());
-    dispatch(setState({ isLoading: false }));
+    setTimeout(() => {
+      dispatch(setResultThunk());
+      dispatch(setState({ isLoading: false }));
+    }, 300)
+
+
   },
 );
 export const getCurrentUserThunk = createAsyncThunk(

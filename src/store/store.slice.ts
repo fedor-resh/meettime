@@ -116,7 +116,7 @@ export const postEventThunk = createAsyncThunk(
     setTimeout(() => {
       dispatch(setResultThunk());
       dispatch(setState({ isLoading: false }));
-    }, 200)
+    }, 300)
 
 
   },

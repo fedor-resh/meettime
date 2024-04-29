@@ -3,7 +3,7 @@ import { MS_IN_DAY } from './consts';
 import { BackendInterval, Interval, Results, Event, User, Participant } from './types';
 import { capitalizeFirstLetter } from './utils';
 const axiosWithCookies = axios.create({
-  baseURL: 'https://meettimeflask.fedor-resh.repl.co',
+  baseURL: 'https://14529119-2441-41cb-9d62-c67a7fe2527c-00-31x7hoj27ckcy.riker.replit.dev',
   withCredentials: true,
 })
 const API_PATH = 'https://14529119-2441-41cb-9d62-c67a7fe2527c-00-31x7hoj27ckcy.riker.replit.dev';

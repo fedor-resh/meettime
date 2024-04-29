@@ -6,7 +6,7 @@ const axiosWithCookies = axios.create({
   baseURL: 'https://meettimeflask.fedor-resh.repl.co',
   withCredentials: true,
 })
-const API_PATH = 'https://14529119-2441-41cb-9d62-c67a7fe2527c-00-31x7hoj27ckcy.riker.replit.dev/';
+const API_PATH = 'https://14529119-2441-41cb-9d62-c67a7fe2527c-00-31x7hoj27ckcy.riker.replit.dev';
 export function convertParticipants(
   participants: User[],
   currentUser: User,

@@ -3,10 +3,9 @@ import { MS_IN_DAY } from './consts';
 import { BackendInterval, Interval, Results, Event, User, Participant } from './types';
 import { capitalizeFirstLetter } from './utils';
 const axiosWithCookies = axios.create({
-  baseURL: 'https://fedorresh.ru',
-  withCredentials: true,
+  baseURL: 'https://meettime.fedorresh.ru'
 })
-const API_PATH = 'https://fedorresh.ru';
+const API_PATH = 'https://meettime.fedorresh.ru';
 export function convertParticipants(
   participants: User[],
   currentUser: User,

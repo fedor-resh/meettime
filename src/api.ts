@@ -4,7 +4,6 @@ import { BackendInterval, Interval, Results, Event, User, Participant } from './
 import { capitalizeFirstLetter } from './utils';
 const axiosWithCookies = axios.create({
   baseURL: 'https://meettime.fedorresh.ru',
-    withCredentials: true,
 })
 const API_PATH = 'https://meettime.fedorresh.ru';
 export function convertParticipants(
